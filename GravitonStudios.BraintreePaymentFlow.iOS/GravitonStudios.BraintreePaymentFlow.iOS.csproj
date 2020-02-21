@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CD32710E-D053-4BBF-8A9B-359E65A2671C}</ProjectGuid>
+    <ProjectGuid>{BB41FD5A-CFB1-4A84-AF46-4BF360E2B75B}</ProjectGuid>
     <ProjectTypeGuids>{8FFB629D-F513-41CE-95D2-7ECE97B6EEEC};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
-    <RootNamespace>Naxam.BrainTreeCore.iOS</RootNamespace>
-    <AssemblyName>Naxam.BrainTreeCore.iOS</AssemblyName>
+    <RootNamespace>GravitonStudios.BraintreePaymentFlow.iOS</RootNamespace>
+    <AssemblyName>GravitonStudios.BraintreePaymentFlow.iOS</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -42,10 +42,27 @@
     <ObjcBindingCoreSource Include="Structs.cs" />
   </ItemGroup>
   <ItemGroup>
-    <NativeReference Include="..\frameworks\BraintreeCore.framework">
+    <NativeReference Include="..\frameworks\BraintreePaymentFlow.framework">
       <Kind>Framework</Kind>
       <SmartLink>False</SmartLink>
     </NativeReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Naxam.BraintreeCore.iOS\GravitonStudios.BraintreeCore.iOS.csproj">
+      <Project>{CD32710E-D053-4BBF-8A9B-359E65A2671C}</Project>
+      <Name>GravitonStudios.BraintreeCore.iOS</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\GravitonStudios.CardinalMobile.iOS\GravitonStudios.CardinalMobile.iOS.csproj">
+      <Project>{8E47A056-B3FB-4A16-A309-7ADBB733A00F}</Project>
+      <Name>GravitonStudios.CardinalMobile.iOS</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Naxam.BraintreeCard.iOS\GravitonStudios.BraintreeCard.iOS.csproj">
+      <Project>{FFC173C8-BAFF-4641-9750-AC5CD8FDB51A}</Project>
+      <Name>GravitonStudios.BraintreeCard.iOS</Name>
+      <Private>False</Private>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets" />
 </Project>

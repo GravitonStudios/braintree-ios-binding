@@ -3,18 +3,18 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BB41FD5A-CFB1-4A84-AF46-4BF360E2B75B}</ProjectGuid>
+    <ProjectGuid>{FFC173C8-BAFF-4641-9750-AC5CD8FDB51A}</ProjectGuid>
     <ProjectTypeGuids>{8FFB629D-F513-41CE-95D2-7ECE97B6EEEC};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
-    <RootNamespace>Naxam.BraintreePaymentFlow.iOS</RootNamespace>
-    <AssemblyName>Naxam.BraintreePaymentFlow.iOS</AssemblyName>
+    <RootNamespace>GravitonStudios.BraintreeCard.iOS</RootNamespace>
+    <AssemblyName>GravitonStudios.BraintreeCard.iOS</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug</OutputPath>
+    <OutputPath>..\GravitonStudios.BraintreeCard.iOS\bin\Debug</OutputPath>
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -22,7 +22,7 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release</OutputPath>
+    <OutputPath>..\GravitonStudios.BraintreeCard.iOS\bin\Release</OutputPath>
     <DefineConstants></DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -34,6 +34,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Extras.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ObjcBindingApiDefinition Include="ApiDefinition.cs" />
@@ -42,19 +46,16 @@
     <ObjcBindingCoreSource Include="Structs.cs" />
   </ItemGroup>
   <ItemGroup>
-    <NativeReference Include="..\frameworks\BraintreePaymentFlow.framework">
+    <NativeReference Include="..\frameworks\BraintreeCard.framework">
       <Kind>Framework</Kind>
       <SmartLink>False</SmartLink>
     </NativeReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Naxam.BrainTreeCore.iOS\Naxam.BrainTreeCore.iOS.csproj">
+    <ProjectReference Include="..\Naxam.BraintreeCore.iOS\GravitonStudios.BraintreeCore.iOS.csproj">
       <Project>{CD32710E-D053-4BBF-8A9B-359E65A2671C}</Project>
-      <Name>Naxam.BrainTreeCore.iOS</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Naxam.BraintreeCard.iOS\Naxam.BraintreeCard.iOS.csproj">
-      <Project>{FFC173C8-BAFF-4641-9750-AC5CD8FDB51A}</Project>
-      <Name>Naxam.BraintreeCard.iOS</Name>
+      <Name>GravitonStudios.BraintreeCore.iOS</Name>
+      <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets" />
