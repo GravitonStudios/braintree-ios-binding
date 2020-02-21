@@ -1,10 +1,9 @@
-using System;
 using ObjCRuntime;
 
 namespace PayPalOneTouch
 {
 	[Native]
-	public enum PPOTRequestTarget : nint
+	public enum PPOTRequestTarget : long
 	{
 		None,
 		Browser,
@@ -13,7 +12,7 @@ namespace PayPalOneTouch
 	}
 
 	[Native]
-	public enum PPOTErrorCode : nint
+	public enum PPOTErrorCode : long
 	{
 		Unknown = -1000,
 		ParsingFailed = -1001,
@@ -23,7 +22,7 @@ namespace PayPalOneTouch
 	}
 
 	[Native]
-	public enum PPOTResultType : nint
+	public enum PPOTResultType : long
 	{
 		Error,
 		Cancel,

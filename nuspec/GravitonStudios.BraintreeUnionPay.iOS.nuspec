@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+        <!-- Required elements-->
+        <id>GravitonStudios.BraintreeUnionPay.iOS</id>
+        <version>4.32.0</version>
+        <authors>GRAVITON STUDIOS LLC</authors>
+        <owners>GRAVITON STUDIOS LLC</owners>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <title>Graviton Studios - Braintree UnionPay for iOS</title>
+        <summary>Xamarin iOS Binding Library - Braintree UnionPay</summary>
+        <description>Xamarin iOS Binding Library - Braintree UnionPay</description>
+        <releaseNotes>Braintree SDK v4.32.0</releaseNotes>
+        <icon>images/icon.png</icon>
+        <license type="file">LICENSE.txt</license>
+        <projectUrl>https://github.com/GravitonStudios/braintree-ios-binding/tree/master/GravitonStudios.BraintreeUnionPay.iOS</projectUrl>
+        <copyright>Copyright © 2020 GRAVITON STUDIOS LLC</copyright>
+        <tags>Xamarin.iOS, braintree, braintree-unionpay</tags>
+        <dependencies>
+            <dependency id="GravitonStudios.BraintreeCard.iOS" version="4.32.0" />
+        </dependencies>
+    </metadata>
+  <!-- Optional 'files' node -->
+    <files>
+        <file src="../GravitonStudios.BraintreeUnionPay.iOS/bin/Release/GravitonStudios.BraintreeUnionPay.iOS.dll" target="lib/Xamarin.iOS10/GravitonStudios.BraintreeUnionPay.iOS.dll" />
+        <file src="../LICENSE.txt" target="" />
+        <file src="../icon.png" target="images/" />
+    </files>
+</package>

@@ -4,19 +4,6 @@ using PayPalUtils;
 
 namespace PayPalUtils
 {
-	[Static]
-	[Verify (ConstantsInterfaceAssociation)]
-	partial interface Constants
-	{
-		// extern double PayPalUtilsVersionNumber;
-		[Field ("PayPalUtilsVersionNumber", "__Internal")]
-		double PayPalUtilsVersionNumber { get; }
-
-		// extern const unsigned char [] PayPalUtilsVersionString;
-		[Field ("PayPalUtilsVersionString", "__Internal")]
-		byte[] PayPalUtilsVersionString { get; }
-	}
-
 	// @interface PPOTDevice : NSObject
 	[BaseType (typeof(NSObject))]
 	interface PPOTDevice

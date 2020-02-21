@@ -1,5 +1,6 @@
 using System;
 using Foundation;
+using PayPalDataCollector;
 
 namespace PayPalDataCollector
 {
@@ -16,27 +17,23 @@ namespace PayPalDataCollector
 		byte[] PayPalDataCollectorVersionString { get; }
 	}
 
-	// typedef void (^PPRCClientMetadataIDProviderNetworkResponseBlock)(NSHTTPURLResponse * _Nonnull, NSData * _Nonnull);
-	delegate void PPRCClientMetadataIDProviderNetworkResponseBlock (NSHttpUrlResponse arg0, NSData arg1);
-
-	// typedef void (^PPRCClientMetadataIDProviderNetworkAdapterBlock)(NSURLRequest * _Nonnull, PPRCClientMetadataIDProviderNetworkResponseBlock _Nonnull);
-	delegate void PPRCClientMetadataIDProviderNetworkAdapterBlock (NSUrlRequest arg0, PPRCClientMetadataIDProviderNetworkResponseBlock arg1);
-
-	// @interface PPRCClientMetadataIDProvider : NSObject
+	// @interface PPRMOCMagnesSDKResult : NSObject
 	[BaseType (typeof(NSObject))]
-	interface PPRCClientMetadataIDProvider
+	interface PPRMOCMagnesSDKResult
 	{
-		// -(instancetype _Nonnull)initWithAppGuid:(NSString * _Nonnull)appGuid sourceAppVersion:(NSString * _Nonnull)sourceAppVersion networkAdapterBlock:(PPRCClientMetadataIDProviderNetworkAdapterBlock _Nonnull)networkAdapterBlock;
-		[Export ("initWithAppGuid:sourceAppVersion:networkAdapterBlock:")]
-		IntPtr Constructor (string appGuid, string sourceAppVersion, PPRCClientMetadataIDProviderNetworkAdapterBlock networkAdapterBlock);
+		// -(id)initWithDeviceInfo:(NSDictionary *)deviceInfo withPayPalClientMetaDataId:(NSString *)cmid;
+		[Export ("initWithDeviceInfo:withPayPalClientMetaDataId:")]
+		IntPtr Constructor (NSDictionary deviceInfo, string cmid);
 
-		// -(instancetype _Nonnull)initWithAppGuid:(NSString * _Nonnull)appGuid sourceAppVersion:(NSString * _Nonnull)sourceAppVersion networkAdapterBlock:(PPRCClientMetadataIDProviderNetworkAdapterBlock _Nonnull)networkAdapterBlock pairingID:(NSString * _Nullable)pairingID;
-		[Export ("initWithAppGuid:sourceAppVersion:networkAdapterBlock:pairingID:")]
-		IntPtr Constructor (string appGuid, string sourceAppVersion, PPRCClientMetadataIDProviderNetworkAdapterBlock networkAdapterBlock, [NullAllowed] string pairingID);
+		// -(NSDictionary *)getDeviceInfo;
+		[Export ("getDeviceInfo")]
+		[Verify (MethodToProperty)]
+		NSDictionary DeviceInfo { get; }
 
-		// -(NSString * _Nonnull)clientMetadataID:(NSString * _Nullable)pairingID;
-		[Export ("clientMetadataID:")]
-		string ClientMetadataID ([NullAllowed] string pairingID);
+		// -(NSString *)getPayPalClientMetaDataId;
+		[Export ("getPayPalClientMetaDataId")]
+		[Verify (MethodToProperty)]
+		string PayPalClientMetaDataId { get; }
 	}
 
 	// @interface PPDataCollector : NSObject
@@ -59,5 +56,10 @@ namespace PayPalDataCollector
 		[Export ("collectPayPalDeviceData")]
 		[Verify (MethodToProperty)]
 		string CollectPayPalDeviceData { get; }
+
+		// +(PPRMOCMagnesSDKResult * _Nonnull)collectPayPalDeviceInfoWithClientMetadataID:(NSString * _Nullable)clientMetadataID;
+		[Static]
+		[Export ("collectPayPalDeviceInfoWithClientMetadataID:")]
+		PPRMOCMagnesSDKResult CollectPayPalDeviceInfoWithClientMetadataID ([NullAllowed] string clientMetadataID);
 	}
 }

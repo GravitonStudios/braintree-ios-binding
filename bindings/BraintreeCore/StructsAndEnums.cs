@@ -1,10 +1,9 @@
-using System;
 using ObjCRuntime;
 
 namespace BraintreeCore
 {
 	[Native]
-	public enum BTClientMetadataSourceType : nint
+	public enum BTClientMetadataSourceType : long
 	{
 		Unknown = 0,
 		PayPalApp,
@@ -14,7 +13,7 @@ namespace BraintreeCore
 	}
 
 	[Native]
-	public enum BTClientMetadataIntegrationType : nint
+	public enum BTClientMetadataIntegrationType : long
 	{
 		Custom,
 		DropIn,
@@ -23,7 +22,7 @@ namespace BraintreeCore
 	}
 
 	[Native]
-	public enum BTJSONErrorCode : nint
+	public enum BTJSONErrorCode : long
 	{
 		ValueUnknown = 0,
 		ValueInvalid = 1,
@@ -31,7 +30,7 @@ namespace BraintreeCore
 	}
 
 	[Native]
-	public enum BTAPIClientErrorType : nint
+	public enum BTAPIClientErrorType : long
 	{
 		Unknown = 0,
 		ConfigurationUnavailable,
@@ -39,7 +38,7 @@ namespace BraintreeCore
 	}
 
 	[Native]
-	public enum BTAppSwitchTarget : nint
+	public enum BTAppSwitchTarget : long
 	{
 		Unknown = 0,
 		NativeApp,
@@ -47,7 +46,7 @@ namespace BraintreeCore
 	}
 
 	[Native]
-	public enum BTClientTokenError : nint
+	public enum BTClientTokenError : long
 	{
 		Unknown = 0,
 		Invalid,
@@ -55,7 +54,7 @@ namespace BraintreeCore
 	}
 
 	[Native]
-	public enum BTCardNetwork : nint
+	public enum BTCardNetwork : long
 	{
 		Unknown = 0,
 		Amex,
@@ -67,13 +66,15 @@ namespace BraintreeCore
 		Laser,
 		Maestro,
 		UnionPay,
+		Hiper,
+		Hipercard,
 		Solo,
 		Switch,
 		UKMaestro
 	}
 
 	[Native]
-	public enum BTHTTPErrorCode : nint
+	public enum BTHTTPErrorCode : long
 	{
 		Unknown = 0,
 		ResponseContentTypeNotAcceptable,
@@ -84,7 +85,7 @@ namespace BraintreeCore
 	}
 
 	[Native]
-	public enum BTLogLevel : nuint
+	public enum BTLogLevel : ulong
 	{
 		None = 0,
 		Critical = 1,
@@ -95,7 +96,7 @@ namespace BraintreeCore
 	}
 
 	[Native]
-	public enum BTTokenizationServiceError : nint
+	public enum BTTokenizationServiceError : long
 	{
 		Unknown = 0,
 		TypeNotRegistered

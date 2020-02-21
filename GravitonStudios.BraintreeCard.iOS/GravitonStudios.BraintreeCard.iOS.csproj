@@ -52,7 +52,7 @@
     </NativeReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Naxam.BraintreeCore.iOS\GravitonStudios.BraintreeCore.iOS.csproj">
+    <ProjectReference Include="..\GravitonStudios.BraintreeCore.iOS\GravitonStudios.BraintreeCore.iOS.csproj">
       <Project>{CD32710E-D053-4BBF-8A9B-359E65A2671C}</Project>
       <Name>GravitonStudios.BraintreeCore.iOS</Name>
       <Private>False</Private>

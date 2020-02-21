@@ -10,129 +10,6 @@ namespace BraintreeVenmo
 	[Verify (ConstantsInterfaceAssociation)]
 	partial interface Constants
 	{
-		// extern double BraintreeCoreVersionNumber;
-		[Field ("BraintreeCoreVersionNumber", "__Internal")]
-		double BraintreeCoreVersionNumber { get; }
-
-		// extern const unsigned char [] BraintreeCoreVersionString;
-		[Field ("BraintreeCoreVersionString", "__Internal")]
-		byte[] BraintreeCoreVersionString { get; }
-	}
-
-	[Static]
-	[Verify (ConstantsInterfaceAssociation)]
-	partial interface Constants
-	{
-		// extern NSString *const _Nonnull BTJSONErrorDomain;
-		[Field ("BTJSONErrorDomain", "__Internal")]
-		NSString BTJSONErrorDomain { get; }
-	}
-
-	[Static]
-	[Verify (ConstantsInterfaceAssociation)]
-	partial interface Constants
-	{
-		// extern NSString *const _Nonnull BTAPIClientErrorDomain;
-		[Field ("BTAPIClientErrorDomain", "__Internal")]
-		NSString BTAPIClientErrorDomain { get; }
-	}
-
-	[Static]
-	[Verify (ConstantsInterfaceAssociation)]
-	partial interface Constants
-	{
-		// extern NSString *const _Nonnull BTAppSwitchWillSwitchNotification;
-		[Field ("BTAppSwitchWillSwitchNotification", "__Internal")]
-		NSString BTAppSwitchWillSwitchNotification { get; }
-
-		// extern NSString *const _Nonnull BTAppSwitchDidSwitchNotification;
-		[Field ("BTAppSwitchDidSwitchNotification", "__Internal")]
-		NSString BTAppSwitchDidSwitchNotification { get; }
-
-		// extern NSString *const _Nonnull BTAppSwitchWillProcessPaymentInfoNotification;
-		[Field ("BTAppSwitchWillProcessPaymentInfoNotification", "__Internal")]
-		NSString BTAppSwitchWillProcessPaymentInfoNotification { get; }
-
-		// extern NSString *const _Nonnull BTAppSwitchNotificationTargetKey;
-		[Field ("BTAppSwitchNotificationTargetKey", "__Internal")]
-		NSString BTAppSwitchNotificationTargetKey { get; }
-	}
-
-	[Static]
-	[Verify (ConstantsInterfaceAssociation)]
-	partial interface Constants
-	{
-		// extern NSString *const _Nonnull BTClientTokenKeyVersion;
-		[Field ("BTClientTokenKeyVersion", "__Internal")]
-		NSString BTClientTokenKeyVersion { get; }
-
-		// extern NSString *const _Nonnull BTClientTokenErrorDomain;
-		[Field ("BTClientTokenErrorDomain", "__Internal")]
-		NSString BTClientTokenErrorDomain { get; }
-
-		// extern NSString *const _Nonnull BTClientTokenKeyAuthorizationFingerprint;
-		[Field ("BTClientTokenKeyAuthorizationFingerprint", "__Internal")]
-		NSString BTClientTokenKeyAuthorizationFingerprint { get; }
-
-		// extern NSString *const _Nonnull BTClientTokenKeyConfigURL;
-		[Field ("BTClientTokenKeyConfigURL", "__Internal")]
-		NSString BTClientTokenKeyConfigURL { get; }
-	}
-
-	[Static]
-	[Verify (ConstantsInterfaceAssociation)]
-	partial interface Constants
-	{
-		// extern NSString *const _Nonnull BTCustomerInputBraintreeValidationErrorsKey;
-		[Field ("BTCustomerInputBraintreeValidationErrorsKey", "__Internal")]
-		NSString BTCustomerInputBraintreeValidationErrorsKey { get; }
-
-		// extern NSString *const BTHTTPErrorDomain;
-		[Field ("BTHTTPErrorDomain", "__Internal")]
-		NSString BTHTTPErrorDomain { get; }
-
-		// extern NSString *const BTHTTPURLResponseKey;
-		[Field ("BTHTTPURLResponseKey", "__Internal")]
-		NSString BTHTTPURLResponseKey { get; }
-
-		// extern NSString *const BTHTTPJSONResponseBodyKey;
-		[Field ("BTHTTPJSONResponseBodyKey", "__Internal")]
-		NSString BTHTTPJSONResponseBodyKey { get; }
-	}
-
-	[Static]
-	[Verify (ConstantsInterfaceAssociation)]
-	partial interface Constants
-	{
-		// extern NSString *const _Nonnull BTTokenizationServiceErrorDomain;
-		[Field ("BTTokenizationServiceErrorDomain", "__Internal")]
-		NSString BTTokenizationServiceErrorDomain { get; }
-
-		// extern NSString *const _Nonnull BTTokenizationServiceAppSwitchDelegateOption;
-		[Field ("BTTokenizationServiceAppSwitchDelegateOption", "__Internal")]
-		NSString BTTokenizationServiceAppSwitchDelegateOption { get; }
-
-		// extern NSString *const _Nonnull BTTokenizationServiceViewPresentingDelegateOption;
-		[Field ("BTTokenizationServiceViewPresentingDelegateOption", "__Internal")]
-		NSString BTTokenizationServiceViewPresentingDelegateOption { get; }
-
-		// extern NSString *const _Nonnull BTTokenizationServicePayPalScopesOption;
-		[Field ("BTTokenizationServicePayPalScopesOption", "__Internal")]
-		NSString BTTokenizationServicePayPalScopesOption { get; }
-
-		// extern NSString *const _Nonnull BTTokenizationServiceAmountOption;
-		[Field ("BTTokenizationServiceAmountOption", "__Internal")]
-		NSString BTTokenizationServiceAmountOption { get; }
-
-		// extern NSString *const _Nonnull BTTokenizationServiceNonceOption;
-		[Field ("BTTokenizationServiceNonceOption", "__Internal")]
-		NSString BTTokenizationServiceNonceOption { get; }
-	}
-
-	[Static]
-	[Verify (ConstantsInterfaceAssociation)]
-	partial interface Constants
-	{
 		// extern double BraintreeVenmoVersionNumber;
 		[Field ("BraintreeVenmoVersionNumber", "__Internal")]
 		double BraintreeVenmoVersionNumber { get; }
@@ -147,7 +24,7 @@ namespace BraintreeVenmo
 	[BaseType (typeof(BTConfiguration))]
 	interface BTConfiguration_Venmo
 	{
-		// +(void)enableVenmo:(BOOL)isEnabled __attribute__((deprecated("Pay with Venmo no longer relies on a user whitelist, thus this method is not needed")));
+		// +(void)enableVenmo:(BOOL)isEnabled __attribute__((deprecated("Venmo no longer relies on a user whitelist, thus this method is not needed")));
 		[Static]
 		[Export ("enableVenmo:")]
 		void EnableVenmo (bool isEnabled);
@@ -156,9 +33,17 @@ namespace BraintreeVenmo
 		[Export ("isVenmoEnabled")]
 		bool IsVenmoEnabled { get; }
 
-		// @property (readonly, assign, nonatomic) NSString * venmoAccessToken;
-		[Export ("venmoAccessToken")]
+		// @property (readonly, nonatomic, strong) NSString * venmoAccessToken;
+		[Export ("venmoAccessToken", ArgumentSemantic.Strong)]
 		string VenmoAccessToken { get; }
+
+		// @property (readonly, nonatomic, strong) NSString * venmoMerchantID;
+		[Export ("venmoMerchantID", ArgumentSemantic.Strong)]
+		string VenmoMerchantID { get; }
+
+		// @property (readonly, nonatomic, strong) NSString * venmoEnvironment;
+		[Export ("venmoEnvironment", ArgumentSemantic.Strong)]
+		string VenmoEnvironment { get; }
 	}
 
 	// @interface BTVenmoAccountNonce : BTPaymentMethodNonce
@@ -193,6 +78,10 @@ namespace BraintreeVenmo
 		[Export ("authorizeAccountAndVault:completion:")]
 		void AuthorizeAccountAndVault (bool vault, Action<BTVenmoAccountNonce, NSError> completionBlock);
 
+		// -(void)authorizeAccountWithProfileID:(NSString * _Nullable)profileId vault:(BOOL)vault completion:(void (^ _Nonnull)(BTVenmoAccountNonce * _Nullable, NSError * _Nullable))completionBlock __attribute__((swift_name("authorizeAccount(profileID:vault:completion:)")));
+		[Export ("authorizeAccountWithProfileID:vault:completion:")]
+		void AuthorizeAccountWithProfileID ([NullAllowed] string profileId, bool vault, Action<BTVenmoAccountNonce, NSError> completionBlock);
+
 		// -(void)authorizeAccountWithCompletion:(void (^ _Nonnull)(BTVenmoAccountNonce * _Nullable, NSError * _Nullable))completionBlock __attribute__((deprecated("Use [BTVenmoDriver authorizeAccountAndVault:completion instead")));
 		[Export ("authorizeAccountWithCompletion:")]
 		void AuthorizeAccountWithCompletion (Action<BTVenmoAccountNonce, NSError> completionBlock);
@@ -201,6 +90,10 @@ namespace BraintreeVenmo
 		[Export ("isiOSAppAvailableForAppSwitch")]
 		[Verify (MethodToProperty)]
 		bool IsiOSAppAvailableForAppSwitch { get; }
+
+		// -(void)openVenmoAppPageInAppStore;
+		[Export ("openVenmoAppPageInAppStore")]
+		void OpenVenmoAppPageInAppStore ();
 
 		[Wrap ("WeakAppSwitchDelegate")]
 		[NullAllowed]

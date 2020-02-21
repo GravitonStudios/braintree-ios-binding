@@ -1,108 +1,16 @@
-using System;
 using ObjCRuntime;
 
 namespace BraintreePayPal
 {
 	[Native]
-	public enum BTClientMetadataSourceType : nint
+	public enum BTPayPalLineItemKind : long
 	{
-		Unknown = 0,
-		PayPalApp,
-		PayPalBrowser,
-		VenmoApp,
-		Form
+		Debit = 1,
+		Credit
 	}
 
 	[Native]
-	public enum BTClientMetadataIntegrationType : nint
-	{
-		Custom,
-		DropIn,
-		DropIn2,
-		Unknown
-	}
-
-	[Native]
-	public enum BTJSONErrorCode : nint
-	{
-		ValueUnknown = 0,
-		ValueInvalid = 1,
-		AccessInvalid = 2
-	}
-
-	[Native]
-	public enum BTAPIClientErrorType : nint
-	{
-		Unknown = 0,
-		ConfigurationUnavailable,
-		NotAuthorized
-	}
-
-	[Native]
-	public enum BTAppSwitchTarget : nint
-	{
-		Unknown = 0,
-		NativeApp,
-		WebBrowser
-	}
-
-	[Native]
-	public enum BTClientTokenError : nint
-	{
-		Unknown = 0,
-		Invalid,
-		UnsupportedVersion
-	}
-
-	[Native]
-	public enum BTCardNetwork : nint
-	{
-		Unknown = 0,
-		Amex,
-		DinersClub,
-		Discover,
-		MasterCard,
-		Visa,
-		Jcb,
-		Laser,
-		Maestro,
-		UnionPay,
-		Solo,
-		Switch,
-		UKMaestro
-	}
-
-	[Native]
-	public enum BTHTTPErrorCode : nint
-	{
-		Unknown = 0,
-		ResponseContentTypeNotAcceptable,
-		ClientError,
-		ServerError,
-		MissingBaseURL,
-		RateLimitError
-	}
-
-	[Native]
-	public enum BTLogLevel : nuint
-	{
-		None = 0,
-		Critical = 1,
-		Error = 2,
-		Warning = 3,
-		Info = 4,
-		Debug = 5
-	}
-
-	[Native]
-	public enum BTTokenizationServiceError : nint
-	{
-		Unknown = 0,
-		TypeNotRegistered
-	}
-
-	[Native]
-	public enum BTPayPalRequestIntent : nint
+	public enum BTPayPalRequestIntent : long
 	{
 		Authorize = 1,
 		Sale,
@@ -110,7 +18,7 @@ namespace BraintreePayPal
 	}
 
 	[Native]
-	public enum BTPayPalRequestLandingPageType : nint
+	public enum BTPayPalRequestLandingPageType : long
 	{
 		Default = 1,
 		Login,
@@ -118,14 +26,14 @@ namespace BraintreePayPal
 	}
 
 	[Native]
-	public enum BTPayPalRequestUserAction : nint
+	public enum BTPayPalRequestUserAction : long
 	{
 		Default = 1,
 		Commit
 	}
 
 	[Native]
-	public enum BTPayPalDriverErrorType : nint
+	public enum BTPayPalDriverErrorType : long
 	{
 		Unknown = 0,
 		Disabled,

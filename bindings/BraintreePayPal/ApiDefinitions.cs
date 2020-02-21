@@ -10,129 +10,6 @@ namespace BraintreePayPal
 	[Verify (ConstantsInterfaceAssociation)]
 	partial interface Constants
 	{
-		// extern double BraintreeCoreVersionNumber;
-		[Field ("BraintreeCoreVersionNumber", "__Internal")]
-		double BraintreeCoreVersionNumber { get; }
-
-		// extern const unsigned char [] BraintreeCoreVersionString;
-		[Field ("BraintreeCoreVersionString", "__Internal")]
-		byte[] BraintreeCoreVersionString { get; }
-	}
-
-	[Static]
-	[Verify (ConstantsInterfaceAssociation)]
-	partial interface Constants
-	{
-		// extern NSString *const _Nonnull BTJSONErrorDomain;
-		[Field ("BTJSONErrorDomain", "__Internal")]
-		NSString BTJSONErrorDomain { get; }
-	}
-
-	[Static]
-	[Verify (ConstantsInterfaceAssociation)]
-	partial interface Constants
-	{
-		// extern NSString *const _Nonnull BTAPIClientErrorDomain;
-		[Field ("BTAPIClientErrorDomain", "__Internal")]
-		NSString BTAPIClientErrorDomain { get; }
-	}
-
-	[Static]
-	[Verify (ConstantsInterfaceAssociation)]
-	partial interface Constants
-	{
-		// extern NSString *const _Nonnull BTAppSwitchWillSwitchNotification;
-		[Field ("BTAppSwitchWillSwitchNotification", "__Internal")]
-		NSString BTAppSwitchWillSwitchNotification { get; }
-
-		// extern NSString *const _Nonnull BTAppSwitchDidSwitchNotification;
-		[Field ("BTAppSwitchDidSwitchNotification", "__Internal")]
-		NSString BTAppSwitchDidSwitchNotification { get; }
-
-		// extern NSString *const _Nonnull BTAppSwitchWillProcessPaymentInfoNotification;
-		[Field ("BTAppSwitchWillProcessPaymentInfoNotification", "__Internal")]
-		NSString BTAppSwitchWillProcessPaymentInfoNotification { get; }
-
-		// extern NSString *const _Nonnull BTAppSwitchNotificationTargetKey;
-		[Field ("BTAppSwitchNotificationTargetKey", "__Internal")]
-		NSString BTAppSwitchNotificationTargetKey { get; }
-	}
-
-	[Static]
-	[Verify (ConstantsInterfaceAssociation)]
-	partial interface Constants
-	{
-		// extern NSString *const _Nonnull BTClientTokenKeyVersion;
-		[Field ("BTClientTokenKeyVersion", "__Internal")]
-		NSString BTClientTokenKeyVersion { get; }
-
-		// extern NSString *const _Nonnull BTClientTokenErrorDomain;
-		[Field ("BTClientTokenErrorDomain", "__Internal")]
-		NSString BTClientTokenErrorDomain { get; }
-
-		// extern NSString *const _Nonnull BTClientTokenKeyAuthorizationFingerprint;
-		[Field ("BTClientTokenKeyAuthorizationFingerprint", "__Internal")]
-		NSString BTClientTokenKeyAuthorizationFingerprint { get; }
-
-		// extern NSString *const _Nonnull BTClientTokenKeyConfigURL;
-		[Field ("BTClientTokenKeyConfigURL", "__Internal")]
-		NSString BTClientTokenKeyConfigURL { get; }
-	}
-
-	[Static]
-	[Verify (ConstantsInterfaceAssociation)]
-	partial interface Constants
-	{
-		// extern NSString *const _Nonnull BTCustomerInputBraintreeValidationErrorsKey;
-		[Field ("BTCustomerInputBraintreeValidationErrorsKey", "__Internal")]
-		NSString BTCustomerInputBraintreeValidationErrorsKey { get; }
-
-		// extern NSString *const BTHTTPErrorDomain;
-		[Field ("BTHTTPErrorDomain", "__Internal")]
-		NSString BTHTTPErrorDomain { get; }
-
-		// extern NSString *const BTHTTPURLResponseKey;
-		[Field ("BTHTTPURLResponseKey", "__Internal")]
-		NSString BTHTTPURLResponseKey { get; }
-
-		// extern NSString *const BTHTTPJSONResponseBodyKey;
-		[Field ("BTHTTPJSONResponseBodyKey", "__Internal")]
-		NSString BTHTTPJSONResponseBodyKey { get; }
-	}
-
-	[Static]
-	[Verify (ConstantsInterfaceAssociation)]
-	partial interface Constants
-	{
-		// extern NSString *const _Nonnull BTTokenizationServiceErrorDomain;
-		[Field ("BTTokenizationServiceErrorDomain", "__Internal")]
-		NSString BTTokenizationServiceErrorDomain { get; }
-
-		// extern NSString *const _Nonnull BTTokenizationServiceAppSwitchDelegateOption;
-		[Field ("BTTokenizationServiceAppSwitchDelegateOption", "__Internal")]
-		NSString BTTokenizationServiceAppSwitchDelegateOption { get; }
-
-		// extern NSString *const _Nonnull BTTokenizationServiceViewPresentingDelegateOption;
-		[Field ("BTTokenizationServiceViewPresentingDelegateOption", "__Internal")]
-		NSString BTTokenizationServiceViewPresentingDelegateOption { get; }
-
-		// extern NSString *const _Nonnull BTTokenizationServicePayPalScopesOption;
-		[Field ("BTTokenizationServicePayPalScopesOption", "__Internal")]
-		NSString BTTokenizationServicePayPalScopesOption { get; }
-
-		// extern NSString *const _Nonnull BTTokenizationServiceAmountOption;
-		[Field ("BTTokenizationServiceAmountOption", "__Internal")]
-		NSString BTTokenizationServiceAmountOption { get; }
-
-		// extern NSString *const _Nonnull BTTokenizationServiceNonceOption;
-		[Field ("BTTokenizationServiceNonceOption", "__Internal")]
-		NSString BTTokenizationServiceNonceOption { get; }
-	}
-
-	[Static]
-	[Verify (ConstantsInterfaceAssociation)]
-	partial interface Constants
-	{
 		// extern double BraintreePayPalVersionNumber;
 		[Field ("BraintreePayPalVersionNumber", "__Internal")]
 		double BraintreePayPalVersionNumber { get; }
@@ -156,6 +33,53 @@ namespace BraintreePayPal
 		bool IsBillingAgreementsEnabled { get; }
 	}
 
+	// @interface BTPayPalLineItem : NSObject
+	[BaseType (typeof(NSObject))]
+	[DisableDefaultCtor]
+	interface BTPayPalLineItem
+	{
+		// @property (readonly, copy, nonatomic) NSString * _Nonnull quantity;
+		[Export ("quantity")]
+		string Quantity { get; }
+
+		// @property (readonly, copy, nonatomic) NSString * _Nonnull unitAmount;
+		[Export ("unitAmount")]
+		string UnitAmount { get; }
+
+		// @property (readonly, copy, nonatomic) NSString * _Nonnull name;
+		[Export ("name")]
+		string Name { get; }
+
+		// @property (readonly, assign, nonatomic) BTPayPalLineItemKind kind;
+		[Export ("kind", ArgumentSemantic.Assign)]
+		BTPayPalLineItemKind Kind { get; }
+
+		// @property (copy, nonatomic) NSString * _Nullable unitTaxAmount;
+		[NullAllowed, Export ("unitTaxAmount")]
+		string UnitTaxAmount { get; set; }
+
+		// @property (copy, nonatomic) NSString * _Nullable itemDescription;
+		[NullAllowed, Export ("itemDescription")]
+		string ItemDescription { get; set; }
+
+		// @property (copy, nonatomic) NSString * _Nullable productCode;
+		[NullAllowed, Export ("productCode")]
+		string ProductCode { get; set; }
+
+		// @property (nonatomic, strong) NSURL * _Nullable url;
+		[NullAllowed, Export ("url", ArgumentSemantic.Strong)]
+		NSUrl Url { get; set; }
+
+		// -(instancetype _Nonnull)initWithQuantity:(NSString * _Nonnull)quantity unitAmount:(NSString * _Nonnull)unitAmount name:(NSString * _Nonnull)name kind:(BTPayPalLineItemKind)kind;
+		[Export ("initWithQuantity:unitAmount:name:kind:")]
+		IntPtr Constructor (string quantity, string unitAmount, string name, BTPayPalLineItemKind kind);
+
+		// -(NSDictionary * _Nonnull)requestParameters;
+		[Export ("requestParameters")]
+		[Verify (MethodToProperty)]
+		NSDictionary RequestParameters { get; }
+	}
+
 	// @interface BTPayPalRequest : NSObject
 	[BaseType (typeof(NSObject))]
 	interface BTPayPalRequest
@@ -171,6 +95,10 @@ namespace BraintreePayPal
 		// @property (getter = isShippingAddressRequired, nonatomic) BOOL shippingAddressRequired;
 		[Export ("shippingAddressRequired")]
 		bool ShippingAddressRequired { [Bind ("isShippingAddressRequired")] get; set; }
+
+		// @property (getter = isShippingAddressEditable, nonatomic) BOOL shippingAddressEditable;
+		[Export ("shippingAddressEditable")]
+		bool ShippingAddressEditable { [Bind ("isShippingAddressEditable")] get; set; }
 
 		// @property (copy, nonatomic) NSString * _Nullable currencyCode;
 		[NullAllowed, Export ("currencyCode")]
@@ -207,6 +135,14 @@ namespace BraintreePayPal
 		// @property (nonatomic) BOOL offerCredit;
 		[Export ("offerCredit")]
 		bool OfferCredit { get; set; }
+
+		// @property (copy, nonatomic) NSString * _Nullable merchantAccountId;
+		[NullAllowed, Export ("merchantAccountId")]
+		string MerchantAccountId { get; set; }
+
+		// @property (copy, nonatomic) NSArray<BTPayPalLineItem *> * _Nullable lineItems;
+		[NullAllowed, Export ("lineItems", ArgumentSemantic.Copy)]
+		BTPayPalLineItem[] LineItems { get; set; }
 	}
 
 	// @interface BTPayPalCreditFinancingAmount : NSObject
@@ -302,7 +238,7 @@ namespace BraintreePayPal
 	}
 
 	// @protocol BTPayPalApprovalDelegate
-	[Protocol, Model]
+	[Protocol, Model (AutoGeneratedName = true)]
 	interface BTPayPalApprovalDelegate
 	{
 		// @required -(void)onApprovalComplete:(NSURL * _Nonnull)url;
@@ -317,7 +253,15 @@ namespace BraintreePayPal
 	}
 
 	// @protocol BTPayPalApprovalHandler
-	[Protocol, Model]
+	/*
+  Check whether adding [Model] to this declaration is appropriate.
+  [Model] is used to generate a C# class that implements this protocol,
+  and might be useful for protocols that consumers are supposed to implement,
+  since consumers can subclass the generated class instead of implementing
+  the generated interface. If consumers are not supposed to implement this
+  protocol, then [Model] is redundant and will generate code that will never
+  be used.
+*/[Protocol]
 	interface BTPayPalApprovalHandler
 	{
 		// @required -(void)handleApproval:(PPOTRequest * _Nonnull)request paypalApprovalDelegate:(id<BTPayPalApprovalDelegate> _Nonnull)delegate;

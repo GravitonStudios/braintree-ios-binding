@@ -1,7 +1,7 @@
 #tool nuget:?package=NUnit.ConsoleRunner&version=3.4.0
 
 // Cake Addins
-#addin nuget:?package=Cake.FileHelpers&version=2.0.0
+#addin nuget:?package=Cake.FileHelpers&version=3.2.1
 
 //////////////////////////////////////////////////////////////////////
 // ARGUMENTS
@@ -10,7 +10,7 @@
 var target = Argument("target", "Default");
 var configuration = Argument("configuration", "Release");
 
-var VERSION = "4.11.0";
+var VERSION = "4.32.0";
 
 //////////////////////////////////////////////////////////////////////
 // PREPARATION
@@ -19,122 +19,82 @@ var VERSION = "4.11.0";
 var solutionPath = "./braintree-ios.sln";
 var artifacts = new [] {
     new Artifact {
-        AssemblyInfoPath = "./Naxam.Braintree3DSecure.iOS/Properties/AssemblyInfo.cs",
-        NuspecPath = "./braintree-3dsecure.nuspec",
-        Dependencies = new [] { 
-            "Naxam.BraintreeCard.iOS"
-        },
-        Name = "3DSecure"
-    },
-    new Artifact {
-        AssemblyInfoPath = "./Naxam.BraintreeAmericanExpress.iOS/Properties/AssemblyInfo.cs",
-        NuspecPath = "./braintree-americanexpress.nuspec",
-        Dependencies = new [] { 
-            "Naxam.BraintreeCore.iOS"
+        AssemblyInfoPath = "./GravitonStudios.BraintreeCore.iOS/Properties/AssemblyInfo.cs",
+        NuspecPath = "./nuspec/GravitonStudios.BraintreeCore.iOS.nuspec",
+        Dependencies = new string [] { 
         },
         Name = "Core"
     },
     new Artifact {
-        AssemblyInfoPath = "./Naxam.BraintreeApplePay.iOS/Properties/AssemblyInfo.cs",
-        NuspecPath = "./braintree-applepay.nuspec",
+        AssemblyInfoPath = "./GravitonStudios.BraintreeCard.iOS/Properties/AssemblyInfo.cs",
+        NuspecPath = "./nuspec/GravitonStudios.BraintreeCard.iOS.nuspec",
         Dependencies = new [] { 
-            "Naxam.BraintreeCore.iOS"
-        },
-        Name = "ApplyPay"
-    },
-    new Artifact {
-        AssemblyInfoPath = "./Naxam.BraintreeCard.iOS/Properties/AssemblyInfo.cs",
-        NuspecPath = "./braintree-card.nuspec",
-        Dependencies = new [] { 
-            "Naxam.BraintreeCore.iOS"
+            "GravitonStudios.BraintreeCore.iOS"
         },
         Name = "Card"
     },
     new Artifact {
-        AssemblyInfoPath = "./Naxam.BraintreeCore.iOS/Properties/AssemblyInfo.cs",
-        NuspecPath = "./braintree-core.nuspec",
-        Dependencies = new string [] { 
-        }
-    },
-    new Artifact {
-        AssemblyInfoPath = "./Naxam.BraintreeDataCollector.iOS/Properties/AssemblyInfo.cs",
-        NuspecPath = "./braintree-datacollector.nuspec",
+        AssemblyInfoPath = "./GravitonStudios.BraintreeApplePay.iOS/Properties/AssemblyInfo.cs",
+        NuspecPath = "./nuspec/GravitonStudios.BraintreeApplePay.iOS.nuspec",
         Dependencies = new [] { 
-            "Naxam.BraintreeCore.iOS"
+            "GravitonStudios.BraintreeCore.iOS"
         },
-        Name = "DataCollector"
+        Name = "ApplePay"
     },
     new Artifact {
-        AssemblyInfoPath = "./Naxam.BraintreePaymentFlow.iOS/Properties/AssemblyInfo.cs",
-        NuspecPath = "./braintree-paymentflow.nuspec",
+        AssemblyInfoPath = "./GravitonStudios.BraintreeUnionPay.iOS/Properties/AssemblyInfo.cs",
+        NuspecPath = "./nuspec/GravitonStudios.BraintreeUnionPay.iOS.nuspec",
         Dependencies = new [] { 
-            "Naxam.BraintreeCard.iOS"
-        },
-        Name = "PaymentFlow"
-    },
-    new Artifact {
-        AssemblyInfoPath = "./Naxam.BraintreePayPal.iOS/Properties/AssemblyInfo.cs",
-        NuspecPath = "./braintree-paypal.nuspec",
-        Dependencies = new [] { 
-            "Naxam.BraintreeCore.iOS",
-            "Naxam.PayPalOneTouch.iOS"
-        },
-        Name = "PayPal"
-    },
-    new Artifact {
-        AssemblyInfoPath = "./Naxam.BraintreeUI.iOS/Properties/AssemblyInfo.cs",
-        NuspecPath = "./braintree-ui.nuspec",
-        Dependencies = new [] { 
-            "Naxam.BraintreeCore.iOS"
-        },
-        Name = "UI"
-    },
-    new Artifact {
-        AssemblyInfoPath = "./Naxam.BraintreeUnionPay.iOS/Properties/AssemblyInfo.cs",
-        NuspecPath = "./braintree-unionpay.nuspec",
-        Dependencies = new [] { 
-            "Naxam.BraintreeCard.iOS"
+            "GravitonStudios.BraintreeCard.iOS"
         },
         Name = "UnionPay"
     },
     new Artifact {
-        AssemblyInfoPath = "./Naxam.BraintreeVenmo.iOS/Properties/AssemblyInfo.cs",
-        NuspecPath = "./braintree-venmo.nuspec",
-        Dependencies = new [] { 
-            "Naxam.BraintreeCard.iOS"
+        AssemblyInfoPath = "./GravitonStudios.PayPalUtils.iOS/Properties/AssemblyInfo.cs",
+        NuspecPath = "./nuspec/GravitonStudios.PayPalUtils.iOS.nuspec",
+        Dependencies = new string[] {
         },
-        Name = "Venmo"
+        Name = "PayPal Utils"
     },
     new Artifact {
-        AssemblyInfoPath = "./Naxam.PayPal.Risk.iOS/Properties/AssemblyInfo.cs",
-        NuspecPath = "./paypal-risk.nuspec",
-        Dependencies = new string[] { 
-        },
-        Name = "PayPal Risk"
-    },
-    new Artifact {
-        AssemblyInfoPath = "./Naxam.PayPalDataCollector.iOS/Properties/AssemblyInfo.cs",
-        NuspecPath = "./paypal-datacollector.nuspec",
+        AssemblyInfoPath = "./GravitonStudios.PayPalDataCollector.iOS/Properties/AssemblyInfo.cs",
+        NuspecPath = "./nuspec/GravitonStudios.PayPalDataCollector.iOS.nuspec",
         Dependencies = new [] { 
-            "Naxam.PayPal.Risk.iOS",
-            "Naxam.PayPalUtils.iOS"
+            "GravitonStudios.PayPalUtils.iOS"
         }
     },
     new Artifact {
-        AssemblyInfoPath = "./Naxam.PayPalOneTouch.iOS/Properties/AssemblyInfo.cs",
-        NuspecPath = "./paypal-onetouch.nuspec",
+        AssemblyInfoPath = "./GravitonStudios.PayPalOneTouch.iOS/Properties/AssemblyInfo.cs",
+        NuspecPath = "./nuspec/GravitonStudios.PayPalOneTouch.iOS.nuspec",
         Dependencies = new string[] { 
-            "Naxam.BraintreeCore.iOS",
-            "Naxam.PayPalDataCollector.iOS"
+            "GravitonStudios.BraintreeCore.iOS",
+            "GravitonStudios.PayPalDataCollector.iOS"
         },
         Name = "PayPal OneTouch"
     },
     new Artifact {
-        AssemblyInfoPath = "./Naxam.PayPalUtils.iOS/Properties/AssemblyInfo.cs",
-        NuspecPath = "./paypal-utils.nuspec",
-        Dependencies = new string[] {
+        AssemblyInfoPath = "./GravitonStudios.BraintreePayPal.iOS/Properties/AssemblyInfo.cs",
+        NuspecPath = "./nuspec/GravitonStudios.BraintreePayPal.iOS.nuspec",
+        Dependencies = new [] { 
+            "GravitonStudios.PayPalOneTouch.iOS"
         },
-        Name = "PayPal Utils"
+        Name = "PayPal"
+    },
+    new Artifact {
+        AssemblyInfoPath = "./GravitonStudios.CardinalMobile.iOS/Properties/AssemblyInfo.cs",
+        NuspecPath = "./nuspec/GravitonStudios.CardinalMobile.iOS.nuspec",
+        Dependencies = new string[] { 
+        },
+        Name = "CardinalMobile"
+    },
+    new Artifact {
+        AssemblyInfoPath = "./GravitonStudios.BraintreePaymentFlow.iOS/Properties/AssemblyInfo.cs",
+        NuspecPath = "./nuspec/GravitonStudios.BraintreePaymentFlow.iOS.nuspec",
+        Dependencies = new [] { 
+            "GravitonStudios.BraintreeCard.iOS",
+            "GravitonStudios.CardinalMobile.iOS"
+        },
+        Name = "PaymentFlow"
     },
 };
 

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+        <!-- Required elements-->
+        <id>GravitonStudios.BraintreePaymentFlow.iOS</id>
+        <version>4.32.0</version>
+        <authors>GRAVITON STUDIOS LLC</authors>
+        <owners>GRAVITON STUDIOS LLC</owners>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <title>Graviton Studios - Braintree PaymentFlow for iOS</title>
+        <summary>Xamarin iOS Binding Library - Braintree PaymentFlow</summary>
+        <description>Xamarin iOS Binding Library - Braintree PaymentFlow</description>
+        <releaseNotes>Braintree SDK v4.32.0</releaseNotes>
+        <icon>images/icon.png</icon>
+        <license type="file">LICENSE.txt</license>
+        <projectUrl>https://github.com/GravitonStudios/braintree-ios-binding/tree/master/GravitonStudios.BraintreePaymentFlow.iOS</projectUrl>
+        <copyright>Copyright © 2020 GRAVITON STUDIOS LLC</copyright>
+        <tags>Xamarin.iOS, braintree, braintree-paymentflow</tags>
+        <dependencies>
+            <dependency id="GravitonStudios.BraintreeCard.iOS" version="4.32.0" />
+            <dependency id="GravitonStudios.CardinalMobile.iOS" version="2.2.2" />
+        </dependencies>
+    </metadata>
+  <!-- Optional 'files' node -->
+    <files>
+        <file src="../GravitonStudios.BraintreePaymentFlow.iOS/bin/Release/GravitonStudios.BraintreePaymentFlow.iOS.dll" target="lib/Xamarin.iOS10/GravitonStudios.BraintreePaymentFlow.iOS.dll" />
+        <file src="../LICENSE.txt" target="" />
+        <file src="../icon.png" target="images/" />
+    </files>
+</package>

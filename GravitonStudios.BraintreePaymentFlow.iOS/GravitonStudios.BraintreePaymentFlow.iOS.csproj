@@ -48,19 +48,19 @@
     </NativeReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Naxam.BraintreeCore.iOS\GravitonStudios.BraintreeCore.iOS.csproj">
-      <Project>{CD32710E-D053-4BBF-8A9B-359E65A2671C}</Project>
-      <Name>GravitonStudios.BraintreeCore.iOS</Name>
-      <Private>False</Private>
-    </ProjectReference>
     <ProjectReference Include="..\GravitonStudios.CardinalMobile.iOS\GravitonStudios.CardinalMobile.iOS.csproj">
       <Project>{8E47A056-B3FB-4A16-A309-7ADBB733A00F}</Project>
       <Name>GravitonStudios.CardinalMobile.iOS</Name>
       <Private>False</Private>
     </ProjectReference>
-    <ProjectReference Include="..\Naxam.BraintreeCard.iOS\GravitonStudios.BraintreeCard.iOS.csproj">
+    <ProjectReference Include="..\GravitonStudios.BraintreeCard.iOS\GravitonStudios.BraintreeCard.iOS.csproj">
       <Project>{FFC173C8-BAFF-4641-9750-AC5CD8FDB51A}</Project>
       <Name>GravitonStudios.BraintreeCard.iOS</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\GravitonStudios.BraintreeCore.iOS\GravitonStudios.BraintreeCore.iOS.csproj">
+      <Project>{CD32710E-D053-4BBF-8A9B-359E65A2671C}</Project>
+      <Name>GravitonStudios.BraintreeCore.iOS</Name>
       <Private>False</Private>
     </ProjectReference>
   </ItemGroup>

@@ -10,129 +10,6 @@ namespace BraintreeCard
 	[Verify (ConstantsInterfaceAssociation)]
 	partial interface Constants
 	{
-		// extern double BraintreeCoreVersionNumber;
-		[Field ("BraintreeCoreVersionNumber", "__Internal")]
-		double BraintreeCoreVersionNumber { get; }
-
-		// extern const unsigned char [] BraintreeCoreVersionString;
-		[Field ("BraintreeCoreVersionString", "__Internal")]
-		byte[] BraintreeCoreVersionString { get; }
-	}
-
-	[Static]
-	[Verify (ConstantsInterfaceAssociation)]
-	partial interface Constants
-	{
-		// extern NSString *const _Nonnull BTJSONErrorDomain;
-		[Field ("BTJSONErrorDomain", "__Internal")]
-		NSString BTJSONErrorDomain { get; }
-	}
-
-	[Static]
-	[Verify (ConstantsInterfaceAssociation)]
-	partial interface Constants
-	{
-		// extern NSString *const _Nonnull BTAPIClientErrorDomain;
-		[Field ("BTAPIClientErrorDomain", "__Internal")]
-		NSString BTAPIClientErrorDomain { get; }
-	}
-
-	[Static]
-	[Verify (ConstantsInterfaceAssociation)]
-	partial interface Constants
-	{
-		// extern NSString *const _Nonnull BTAppSwitchWillSwitchNotification;
-		[Field ("BTAppSwitchWillSwitchNotification", "__Internal")]
-		NSString BTAppSwitchWillSwitchNotification { get; }
-
-		// extern NSString *const _Nonnull BTAppSwitchDidSwitchNotification;
-		[Field ("BTAppSwitchDidSwitchNotification", "__Internal")]
-		NSString BTAppSwitchDidSwitchNotification { get; }
-
-		// extern NSString *const _Nonnull BTAppSwitchWillProcessPaymentInfoNotification;
-		[Field ("BTAppSwitchWillProcessPaymentInfoNotification", "__Internal")]
-		NSString BTAppSwitchWillProcessPaymentInfoNotification { get; }
-
-		// extern NSString *const _Nonnull BTAppSwitchNotificationTargetKey;
-		[Field ("BTAppSwitchNotificationTargetKey", "__Internal")]
-		NSString BTAppSwitchNotificationTargetKey { get; }
-	}
-
-	[Static]
-	[Verify (ConstantsInterfaceAssociation)]
-	partial interface Constants
-	{
-		// extern NSString *const _Nonnull BTClientTokenKeyVersion;
-		[Field ("BTClientTokenKeyVersion", "__Internal")]
-		NSString BTClientTokenKeyVersion { get; }
-
-		// extern NSString *const _Nonnull BTClientTokenErrorDomain;
-		[Field ("BTClientTokenErrorDomain", "__Internal")]
-		NSString BTClientTokenErrorDomain { get; }
-
-		// extern NSString *const _Nonnull BTClientTokenKeyAuthorizationFingerprint;
-		[Field ("BTClientTokenKeyAuthorizationFingerprint", "__Internal")]
-		NSString BTClientTokenKeyAuthorizationFingerprint { get; }
-
-		// extern NSString *const _Nonnull BTClientTokenKeyConfigURL;
-		[Field ("BTClientTokenKeyConfigURL", "__Internal")]
-		NSString BTClientTokenKeyConfigURL { get; }
-	}
-
-	[Static]
-	[Verify (ConstantsInterfaceAssociation)]
-	partial interface Constants
-	{
-		// extern NSString *const _Nonnull BTCustomerInputBraintreeValidationErrorsKey;
-		[Field ("BTCustomerInputBraintreeValidationErrorsKey", "__Internal")]
-		NSString BTCustomerInputBraintreeValidationErrorsKey { get; }
-
-		// extern NSString *const BTHTTPErrorDomain;
-		[Field ("BTHTTPErrorDomain", "__Internal")]
-		NSString BTHTTPErrorDomain { get; }
-
-		// extern NSString *const BTHTTPURLResponseKey;
-		[Field ("BTHTTPURLResponseKey", "__Internal")]
-		NSString BTHTTPURLResponseKey { get; }
-
-		// extern NSString *const BTHTTPJSONResponseBodyKey;
-		[Field ("BTHTTPJSONResponseBodyKey", "__Internal")]
-		NSString BTHTTPJSONResponseBodyKey { get; }
-	}
-
-	[Static]
-	[Verify (ConstantsInterfaceAssociation)]
-	partial interface Constants
-	{
-		// extern NSString *const _Nonnull BTTokenizationServiceErrorDomain;
-		[Field ("BTTokenizationServiceErrorDomain", "__Internal")]
-		NSString BTTokenizationServiceErrorDomain { get; }
-
-		// extern NSString *const _Nonnull BTTokenizationServiceAppSwitchDelegateOption;
-		[Field ("BTTokenizationServiceAppSwitchDelegateOption", "__Internal")]
-		NSString BTTokenizationServiceAppSwitchDelegateOption { get; }
-
-		// extern NSString *const _Nonnull BTTokenizationServiceViewPresentingDelegateOption;
-		[Field ("BTTokenizationServiceViewPresentingDelegateOption", "__Internal")]
-		NSString BTTokenizationServiceViewPresentingDelegateOption { get; }
-
-		// extern NSString *const _Nonnull BTTokenizationServicePayPalScopesOption;
-		[Field ("BTTokenizationServicePayPalScopesOption", "__Internal")]
-		NSString BTTokenizationServicePayPalScopesOption { get; }
-
-		// extern NSString *const _Nonnull BTTokenizationServiceAmountOption;
-		[Field ("BTTokenizationServiceAmountOption", "__Internal")]
-		NSString BTTokenizationServiceAmountOption { get; }
-
-		// extern NSString *const _Nonnull BTTokenizationServiceNonceOption;
-		[Field ("BTTokenizationServiceNonceOption", "__Internal")]
-		NSString BTTokenizationServiceNonceOption { get; }
-	}
-
-	[Static]
-	[Verify (ConstantsInterfaceAssociation)]
-	partial interface Constants
-	{
 		// extern double BraintreeCardVersionNumber;
 		[Field ("BraintreeCardVersionNumber", "__Internal")]
 		double BraintreeCardVersionNumber { get; }
@@ -179,9 +56,25 @@ namespace BraintreeCard
 		[NullAllowed, Export ("cardholderName")]
 		string CardholderName { get; set; }
 
+		// @property (copy, nonatomic) NSString * _Nullable firstName;
+		[NullAllowed, Export ("firstName")]
+		string FirstName { get; set; }
+
+		// @property (copy, nonatomic) NSString * _Nullable lastName;
+		[NullAllowed, Export ("lastName")]
+		string LastName { get; set; }
+
+		// @property (copy, nonatomic) NSString * _Nullable company;
+		[NullAllowed, Export ("company")]
+		string Company { get; set; }
+
 		// @property (copy, nonatomic) NSString * _Nullable streetAddress;
 		[NullAllowed, Export ("streetAddress")]
 		string StreetAddress { get; set; }
+
+		// @property (copy, nonatomic) NSString * _Nullable extendedAddress;
+		[NullAllowed, Export ("extendedAddress")]
+		string ExtendedAddress { get; set; }
 
 		// @property (copy, nonatomic) NSString * _Nullable locality;
 		[NullAllowed, Export ("locality")]
@@ -199,9 +92,115 @@ namespace BraintreeCard
 		[NullAllowed, Export ("countryCodeAlpha2")]
 		string CountryCodeAlpha2 { get; set; }
 
+		// @property (copy, nonatomic) NSString * _Nullable countryCodeAlpha3;
+		[NullAllowed, Export ("countryCodeAlpha3")]
+		string CountryCodeAlpha3 { get; set; }
+
+		// @property (copy, nonatomic) NSString * _Nullable countryCodeNumeric;
+		[NullAllowed, Export ("countryCodeNumeric")]
+		string CountryCodeNumeric { get; set; }
+
 		// @property (assign, nonatomic) BOOL shouldValidate;
 		[Export ("shouldValidate")]
 		bool ShouldValidate { get; set; }
+
+		// @property (assign, nonatomic) BOOL authenticationInsightRequested;
+		[Export ("authenticationInsightRequested")]
+		bool AuthenticationInsightRequested { get; set; }
+
+		// @property (copy, nonatomic) NSString * _Nullable merchantAccountId;
+		[NullAllowed, Export ("merchantAccountId")]
+		string MerchantAccountId { get; set; }
+	}
+
+	// @interface BTThreeDSecureInfo : NSObject
+	[BaseType (typeof(NSObject))]
+	interface BTThreeDSecureInfo
+	{
+		// -(instancetype _Nonnull)initWithJSON:(BTJSON * _Nonnull)json;
+		[Export ("initWithJSON:")]
+		IntPtr Constructor (BTJSON json);
+
+		// @property (readonly, nonatomic) NSString * _Nullable acsTransactionId;
+		[NullAllowed, Export ("acsTransactionId")]
+		string AcsTransactionId { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nullable authenticationTransactionStatus;
+		[NullAllowed, Export ("authenticationTransactionStatus")]
+		string AuthenticationTransactionStatus { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nullable authenticationTransactionStatusReason;
+		[NullAllowed, Export ("authenticationTransactionStatusReason")]
+		string AuthenticationTransactionStatusReason { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nullable cavv;
+		[NullAllowed, Export ("cavv")]
+		string Cavv { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nullable dsTransactionId;
+		[NullAllowed, Export ("dsTransactionId")]
+		string DsTransactionId { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nullable eciFlag;
+		[NullAllowed, Export ("eciFlag")]
+		string EciFlag { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nullable enrolled;
+		[NullAllowed, Export ("enrolled")]
+		string Enrolled { get; }
+
+		// @property (readonly, assign, nonatomic) BOOL liabilityShifted;
+		[Export ("liabilityShifted")]
+		bool LiabilityShifted { get; }
+
+		// @property (readonly, assign, nonatomic) BOOL liabilityShiftPossible;
+		[Export ("liabilityShiftPossible")]
+		bool LiabilityShiftPossible { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nullable lookupTransactionStatus;
+		[NullAllowed, Export ("lookupTransactionStatus")]
+		string LookupTransactionStatus { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nullable lookupTransactionStatusReason;
+		[NullAllowed, Export ("lookupTransactionStatusReason")]
+		string LookupTransactionStatusReason { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nullable paresStatus;
+		[NullAllowed, Export ("paresStatus")]
+		string ParesStatus { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nullable status;
+		[NullAllowed, Export ("status")]
+		string Status { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nullable threeDSecureServerTransactionId;
+		[NullAllowed, Export ("threeDSecureServerTransactionId")]
+		string ThreeDSecureServerTransactionId { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nullable threeDSecureVersion;
+		[NullAllowed, Export ("threeDSecureVersion")]
+		string ThreeDSecureVersion { get; }
+
+		// @property (readonly, assign, nonatomic) BOOL wasVerified;
+		[Export ("wasVerified")]
+		bool WasVerified { get; }
+
+		// @property (readonly, nonatomic) NSString * _Nullable xid;
+		[NullAllowed, Export ("xid")]
+		string Xid { get; }
+
+		// @property (copy, nonatomic) NSString * _Nullable errorMessage;
+		[NullAllowed, Export ("errorMessage")]
+		string ErrorMessage { get; set; }
+	}
+
+	// @interface BTAuthenticationInsight : NSObject
+	[BaseType (typeof(NSObject))]
+	interface BTAuthenticationInsight
+	{
+		// @property (copy, nonatomic) NSString * _Nullable regulationEnvironment;
+		[NullAllowed, Export ("regulationEnvironment")]
+		string RegulationEnvironment { get; set; }
 	}
 
 	// @interface BTCardNonce : BTPaymentMethodNonce
@@ -216,10 +215,21 @@ namespace BraintreeCard
 		[NullAllowed, Export ("lastTwo")]
 		string LastTwo { get; }
 
-		// +(instancetype _Nonnull)cardNonceWithJSON:(BTJSON * _Nonnull)cardJSON;
-		[Static]
-		[Export ("cardNonceWithJSON:")]
-		BTCardNonce CardNonceWithJSON (BTJSON cardJSON);
+		// @property (readonly, copy, nonatomic) NSString * _Nullable bin;
+		[NullAllowed, Export ("bin")]
+		string Bin { get; }
+
+		// @property (readonly, nonatomic, strong) BTBinData * _Nonnull binData;
+		[Export ("binData", ArgumentSemantic.Strong)]
+		BTBinData BinData { get; }
+
+		// @property (readonly, nonatomic, strong) BTThreeDSecureInfo * _Nonnull threeDSecureInfo;
+		[Export ("threeDSecureInfo", ArgumentSemantic.Strong)]
+		BTThreeDSecureInfo ThreeDSecureInfo { get; }
+
+		// @property (readonly, nonatomic, strong) BTAuthenticationInsight * _Nullable authenticationInsight;
+		[NullAllowed, Export ("authenticationInsight", ArgumentSemantic.Strong)]
+		BTAuthenticationInsight AuthenticationInsight { get; }
 	}
 
 	[Static]

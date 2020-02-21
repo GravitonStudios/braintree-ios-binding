@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+        <!-- Required elements-->
+        <id>GravitonStudios.BraintreeCard.iOS</id>
+        <version>4.32.0</version>
+        <authors>GRAVITON STUDIOS LLC</authors>
+        <owners>GRAVITON STUDIOS LLC</owners>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <title>Graviton Studios - Braintree Card for iOS</title>
+        <summary>Xamarin iOS Binding Library - Braintree Card</summary>
+        <description>Xamarin iOS Binding Library - Braintree Card</description>
+        <releaseNotes>Braintree SDK v4.32.0</releaseNotes>
+        <icon>images/icon.png</icon>
+        <license type="file">LICENSE.txt</license>
+        <projectUrl>https://github.com/GravitonStudios/braintree-ios-binding/tree/master/GravitonStudios.BraintreeCard.iOS</projectUrl>
+        <copyright>Copyright © 2020 GRAVITON STUDIOS LLC</copyright>
+        <tags>Xamarin.iOS, braintree, braintree-card</tags>
+        <dependencies>
+            <dependency id="GravitonStudios.BraintreeCore.iOS" version="4.32.0" />
+        </dependencies>
+    </metadata>
+  <!-- Optional 'files' node -->
+    <files>
+        <file src="../GravitonStudios.BraintreeCard.iOS/bin/Release/GravitonStudios.BraintreeCard.iOS.dll" target="lib/Xamarin.iOS10/GravitonStudios.BraintreeCard.iOS.dll" />
+        <file src="../LICENSE.txt" target="" />
+        <file src="../icon.png" target="images/" />
+    </files>
+</package>

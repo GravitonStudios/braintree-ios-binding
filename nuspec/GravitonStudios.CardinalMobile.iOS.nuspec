@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+        <!-- Required elements-->
+        <id>GravitonStudios.CardinalMobile.iOS</id>
+        <version>2.2.2</version>
+        <authors>GRAVITON STUDIOS LLC</authors>
+        <owners>GRAVITON STUDIOS LLC</owners>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <title>Graviton Studios - CardinalMobile</title>
+        <summary>Xamarin iOS Binding Library - CardinalMobile</summary>
+        <description>Xamarin iOS Binding Library - CardinalMobile</description>
+        <releaseNotes>CardinalMobile v2.2.2</releaseNotes>
+        <icon>images/icon.png</icon>
+        <license type="file">LICENSE.txt</license>
+        <projectUrl>https://github.com/GravitonStudios/braintree-ios-binding/tree/master/GravitonStudios.CardinalMobile.iOS</projectUrl>
+        <copyright>Copyright © 2020 GRAVITON STUDIOS LLC</copyright>
+        <tags>Xamarin.iOS, cardinalmobile</tags>
+    </metadata>
+  <!-- Optional 'files' node -->
+    <files>
+        <file src="../GravitonStudios.CardinalMobile.iOS/bin/Release/GravitonStudios.CardinalMobile.iOS.dll" target="lib/Xamarin.iOS10/GravitonStudios.CardinalMobile.iOS.dll" />
+        <file src="../LICENSE.txt" target="" />
+        <file src="../icon.png" target="images/" />
+    </files>
+</package>

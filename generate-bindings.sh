@@ -1,15 +1,17 @@
 #! /bin/bash
 
 function generate() {
-    sharpie bind -sdk iphoneos -dry-run -output ./bindings/$1 -namespace $1 ./frameworks/$1.framework/Headers/*.h
+    sharpie bind -sdk iphoneos -f ./frameworks/$1 -output ./bindings/$1 -namespace $1
 }
 
 frameworks=(
     Braintree3DSecure
+    BraintreeAmericanExpress
     BraintreeApplePay
     BraintreeCard
     BraintreeCore
     BraintreeDataCollector
+    BraintreePaymentFlow
     BraintreePayPal
     BraintreeVenmo
     BraintreeUI
@@ -20,5 +22,6 @@ frameworks=(
 )
 for framework in "${frameworks[@]}"
 do
+echo Biding $framework
 generate $framework
 done

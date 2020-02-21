@@ -1,0 +1,26 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="braintree-ios" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <DisabledProjects>
+    <String>Naxam.Braintree3DSecure.iOS/Naxam.Braintree3DSecure.iOS.csproj</String>
+    <String>Naxam.BraintreeAmericanExpress.iOS/Naxam.BraintreeAmericanExpress.iOS.csproj</String>
+    <String>Naxam.BraintreeDataCollector.iOS/Naxam.BraintreeDataCollector.iOS.csproj</String>
+    <String>Naxam.BraintreeUI.iOS/Naxam.BraintreeUI.iOS.csproj</String>
+    <String>Naxam.BraintreeVenmo.iOS/Naxam.BraintreeVenmo.iOS.csproj</String>
+    <String>Naxam.BrainTreeCore.iOS/Naxam.BrainTreeCore.iOS.csproj</String>
+    <String>Naxam.PayPal.Risk.iOS/Naxam.PayPal.Risk.iOS.csproj</String>
+  </DisabledProjects>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
